@@ -1,0 +1,14 @@
+{
+  "apkRegistry": "0x4CF2160928A4a353Cf0212EF953ee2Dc3d9F7e0B",
+  "avsPauserReg": "0xd9E7CEf66490Ce34EBE71d66036079e7A85790AE",
+  "avsProxyAdmin": "0x80Ee00FAE33ff8a16D7E094E11ff597f651ECF94",
+  "certificateVerifier": "0x035f01335d77c5c13cd477F5AD6518d3c50E4e68",
+  "deploymentBlock": 3199379,
+  "indexRegistry": "0x86650A65876E1e01b3EB39519f1EA5a517475B05",
+  "object": "deployment",
+  "operatorStateRetriever": "0x9aEBe2bd3384D30704b906a2728218242F3d39c0",
+  "registryCoordinator": "0xB8b2B243DDc1C66e9cE85f3bC76759a250b6c32A",
+  "serviceManager": "0x626F36f2dA0EF56d444cfa972e8E17305d814Aa1",
+  "socketRegistry": "0x45a1688085a6E00044B6B13Ccb0Cffe5957394aB",
+  "stakeRegistry": "0xC1F5ca8E62ed7c9EF6cE872888CE4ac92F20f30B"
+}
