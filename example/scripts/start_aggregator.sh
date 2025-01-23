@@ -5,6 +5,7 @@ set -e
 # Default values
 RPC_URL="http://0.0.0.0:8545"
 PRIVATE_KEY=""
+UNI_RPC_URL=""
 
 
 # Parse named arguments
@@ -16,6 +17,10 @@ while [ $# -gt 0 ]; do
       ;;
     --private-key)
       PRIVATE_KEY="$2"
+      shift 2
+      ;;
+    --unichain-url)
+      UNI_RPC_URL="$2"
       shift 2
       ;;
     --help)
@@ -39,13 +44,19 @@ if [ -z "$PRIVATE_KEY" ]; then
   exit 1
 fi
 
+if [ -z "$UNI_RPC_URL" ]; then
+  echo "Error: --unichain-url is required"
+  exit 1
+fi
+
 # Get the directory where the script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Build the nodes
 PARENT_DIR=$SCRIPT_DIR/..
 
-go run $PARENT_DIR/aggregator/eth_call.go  \
+go run $PARENT_DIR/aggregator/cmd/uvn.go  \
   --eth-url $RPC_URL \
   --avs-deployment-path $PARENT_DIR/contracts/script/output/avs_deploy_output.json \
-  --ecdsa-private-key $PRIVATE_KEY
+  --ecdsa-private-key $PRIVATE_KEY \
+  --unichain-url $UNI_RPC_URL

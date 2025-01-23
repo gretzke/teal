@@ -51,7 +51,7 @@ func start(c *cli.Context) error {
 		BlsKeyPair:  keyPair,
 	}
 
-	node := node.NewEthCallNode(cfg, c.String(utils.EthUrlFlag.Name))
+	node := node.NewUvnCallNode(cfg, c.String(utils.EthUrlFlag.Name))
 	if err := node.Start(); err != nil {
 		log.Fatal(err)
 	}

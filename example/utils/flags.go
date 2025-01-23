@@ -29,4 +29,10 @@ var (
 		Value:    "",
 		Required: true,
 	}
+	UnichainUrlFlag = cli.StringFlag{
+		Name:     "unichain-url",
+		Usage:    "The URL of the unichain node",
+		Value:    "",
+		Required: true,
+	}
 )
