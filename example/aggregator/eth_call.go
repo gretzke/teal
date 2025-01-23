@@ -242,13 +242,13 @@ func start(c *cli.Context) error {
 				return
 			}
 
-			_, err = txManager.Send(ctx, tx, true)
+			receipt, err := txManager.Send(ctx, tx, true)
 			if err != nil {
 				logger.Error("Failed to send verify certificate tx", "tx", tx.Hash().Hex(), "error", err)
 				return
 			}
 
-			logger.Info("Sent verify certificate tx", "tx", tx.Hash().Hex(), "requestNumber", requestNumber)
+			logger.Info("Sent verify certificate tx", "tx", receipt.TxHash.Hex(), "requestNumber", requestNumber)
 		}()
 	}
 }
